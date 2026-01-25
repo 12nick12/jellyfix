@@ -3,9 +3,6 @@
 **JellyFix** adds a seamless "Report Issue" button directly into your Jellyfin web interface.
 Your users can easily report audio/video issues, missing subtitles, or request content. You receive instant email notifications and can manage tickets through a secure, integrated Admin Dashboard.
 
-![JellyFix Screenshot](https://via.placeholder.com/800x400.png?text=JellyFix+Interface+Screenshot)
-*(Add a screenshot of the modal here)*
-
 ## ✨ Features
 
 * 🛎️ **Integrated Button**: Automatically appears on movie and series detail pages.
@@ -24,7 +21,7 @@ Your users can easily report audio/video issues, missing subtitles, or request c
 
 1.  **Clone this repository**:
     ```bash
-    git clone [https://github.com/your-username/jellyfix.git](https://github.com/your-username/jellyfix.git)
+    git clone [https://github.com/Sandoiitchisan/jellyfix.git](https://github.com/your-username/jellyfix.git)
     cd jellyfix
     ```
 
@@ -61,7 +58,7 @@ your-jellyfin-domain.com {
 
 #### Nginx example
 
-```Nginx ExampleNginxlocation /jellyfix/ {
+```Nginxlocation /jellyfix/ {
     # Ensure the trailing slash is present
     proxy_pass http://jellyfix:8000/;
     proxy_set_header Host $host;
@@ -96,7 +93,7 @@ You need to inject a small JavaScript snippet into your Jellyfin Web UI.
 ```
 
 4. Copy the entire content of the JS file.
-5. Paste it into index.html, just before the closing </body> tag.
+5. Paste it into index.html, just before the closing '</body>' tag.
 6. Save and Clear your browser cache (Ctrl+F5).
 
 ## 📱 Usage
@@ -114,15 +111,16 @@ For Admins
 ## ⚙️ Configuration (.env variables)
 
 | Variable | Description | Default |
-| LANGUAGE | Language for emails & dashboard (EN or FR) | EN |
-| ROOT_PATH | Base URL path for the API | /jellyfix |
-| JELLYFIN_ADMIN_ID | Your Jellyfin User ID (for security) | Required |
-| SMTP_SERVER | "SMTP Host (e.g., smtp.gmail.com)" | Required |
-| SMTP_PORT | "SMTP Port (587 for STARTTLS, 465 for SSL)" | 587 |
-| SMTP_USER | SMTP Username/Email | Required |
-| SMTP_PASSWORD | SMTP Password (use App Password if 2FA) | Required |
-| EMAIL_FROM | Sender address | Same as User |
-| EMAIL_TO | Where to send notifications | Same as User |
+| :--- | :--- | :--- |
+| `LANGUAGE` | Language for emails & dashboard (`EN` or `FR`) | `EN` |
+| `ROOT_PATH` | Base URL path for the API | `/jellyfix` |
+| `JELLYFIN_ADMIN_ID` | Your Jellyfin User ID (for security) | *Required* |
+| `SMTP_SERVER` | SMTP Host (e.g., smtp.gmail.com) | *Required* |
+| `SMTP_PORT` | SMTP Port (587 for STARTTLS, 465 for SSL) | `587` |
+| `SMTP_USER` | SMTP Username/Email | *Required* |
+| `SMTP_PASSWORD` | SMTP Password (use App Password if 2FA) | *Required* |
+| `EMAIL_FROM` | Sender address | Same as User |
+| `EMAIL_TO` | Where to send notifications | Same as User |
 
 ## 🔄 Updating
 
